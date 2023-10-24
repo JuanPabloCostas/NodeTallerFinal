@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Empleado</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome, <span id="usuario"></span>!</h1>
+        <h2>Buscar Empleado</h2>
+    </div>
+
+    <div>
+        <form id="buscarEmpleadoForm">
+            <label for="nombre">Nombre(s)</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" required>
+
+            <button type="submit">Buscar Empleado</button>
+        </form>
+    </div>
+
+    <div>
+        <table id="tablaEmpleados">
+            <thead>
+                <tr>
+                    <th>Nombre(s)</th>
+                    <th>Apellidos</th>
+                    <th>Teléfono</th>
+                    <th>Correo electrónico</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>Nombre(s)</td>
+                    <td>Apellidos</td>
+                    <td>Teléfono</td>
+                    <td>Correo electrónico</td>
+                    <td>Dirección</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="message" class="message" style="display: none;">
+        <!-- Message from API! -->
+    </div>
+
+    <script src="scrips/validate.js"></script>
+    <script type="module" src="scrips/buscarEmpleado.js"></script>
+</body>
+</html>

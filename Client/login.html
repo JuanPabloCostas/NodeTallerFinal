@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="button" onclick="submitForm()">Login</button>
+</form>
+
+<script>
+    function submitForm() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const requestData = {
+            usuario: username,
+            contrasena: password
+        };
+
+        fetch('http://localhost:3003/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+
+            // Save user data to localStorage
+            localStorage.setItem('userId', data.id_usuario);
+            localStorage.setItem('usuario', data.usuario);
+            localStorage.setItem('token', data.token);
+
+            // Handle success response
+            window.location.href = 'welcome.html';
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Handle error
+        });
+    }
+</script>
+
+</body>
+</html>

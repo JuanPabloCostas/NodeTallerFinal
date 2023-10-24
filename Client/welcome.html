@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<!-- header -->
+<div>
+    <h1>Welcome, <span id="usuario"></span>!</h1>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<!-- body -->
+<div>
+    <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
+    <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
+</div>
+
+
+<script src="scrips/validate.js"></script>
+
+<script>
+    function logout() {
+        // Clear user data from localStorage
+        localStorage.removeItem('userId');
+        localStorage.removeItem('token');
+
+        // Redirect to the login page (replace with your login page URL)
+        window.location.href = 'login.html';
+    }
+</script>
+
+
+
+</body>
+</html>

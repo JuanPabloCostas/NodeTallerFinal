@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Empleado</title>
+</head>
+<body>
+
+<!-- header -->
+<div>
+    <h1>Welcome, <span id="usuario"></span>!</h1>
+    <h2>Registrar Empleado</h2>
+</div>
+
+<!-- body -->
+<div>
+    <form id="registrarEmpleadoForm">
+        <label for="nombre">Nombre(s)</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" required>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa los apellidos" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" name="telefono" placeholder="Ingresa el teléfono" required>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="text" id="correo" name="correo" placeholder="Ingresa el correo electrónico" required>
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ingresa la dirección" required>
+
+        <!-- <button type="button" onclick="registrarEmpleado()">Registrar Empleado</button> -->
+        <button type="submit">Registrar Empleado</button>
+    </form>
+</div>
+
+
+<!-- Add a message element -->
+<div id="message" class="message" style="display: none;">
+    <!-- Message from API! -->
+</div>
+
+
+<script src="scrips/validate.js"></script>
+<script type="module" src="scrips/registrarEmpleado.js"></script>
+
+</body>
+</html>
