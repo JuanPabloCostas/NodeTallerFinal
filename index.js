@@ -9,6 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Hello World! Pokemon API');
+});
+
 app.use('/api/auth', require('./src/routes/auth.routes'));
 
 app.use('/api/gestion', require('./src/routes/gestion.routes'));

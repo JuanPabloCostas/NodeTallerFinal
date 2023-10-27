@@ -14,7 +14,7 @@ if (!userId || !token) {
 // You can make a request to your server to validate the token
 
 // Example using fetch:
-fetch('http://localhost:3003/api/auth/validateToken', {
+fetch('https://becastest1.ue.r.appspot.com/api/auth/validateToken', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

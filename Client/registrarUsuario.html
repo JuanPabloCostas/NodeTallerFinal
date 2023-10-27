@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar usuario</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Welcome, <span id="usuario"></span>!</h1>
+        <h2>Registrar usuario</h2>
+        <div>
+            <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
+            <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
+            <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
+            <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
+            <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
+        </div>
+        <button id="logoutButton">Logout</button>
+    </div>
+
+    <form method="post" id="registrarUsuarioForm">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Ingresa el usuario" required>
+
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa la contraseña" required>
+
+        <label for="descripcion">Descripcion</label>
+        <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la descripcion" required>
+
+        <label for="pkmFavorito">Pokemon Favorito</label>
+        <input type="text" id="pkmFavorito" name="pkmFavorito" placeholder="Ingresa el pokemon favorito" required>
+
+        <label for="id_empleado">ID de empleado</label>
+        <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID de empleado" required>
+
+        <button id="submitButton" type="submit">Registrar usuario</button>
+    </form>
+
+    <div id="message" class="message" style="display: none;">
+        <!-- Message from API! -->
+    </div>
+
+    <script src="scrips/validate.js"></script>
+    <script src="scrips/logout.js"></script>
+    <script type="module" src="scrips/registrarUsuario.js"></script>
+
+</body>
+</html>

@@ -9,38 +9,47 @@
     <div>
         <h1>Welcome, <span id="usuario"></span>!</h1>
         <h2>Buscar Empleado</h2>
+        <div>
+        <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
+        <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
+        <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
+        <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
+        <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
     </div>
+        <button id="logoutButton">Logout</button>
+    </div>
+
 
     <div>
         <form id="buscarEmpleadoForm">
             <label for="nombre">Nombre(s)</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" required>
 
-            <button type="submit">Buscar Empleado</button>
+            <button id="submitButton" type="submit">Buscar Empleado</button>
         </form>
     </div>
+
+    <br>
 
     <div>
         <table id="tablaEmpleados">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nombre(s)</th>
                     <th>Apellidos</th>
                     <th>Teléfono</th>
                     <th>Correo electrónico</th>
                     <th>Dirección</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- <tr>
-                    <td>Nombre(s)</td>
-                    <td>Apellidos</td>
-                    <td>Teléfono</td>
-                    <td>Correo electrónico</td>
-                    <td>Dirección</td>
-                </tr> -->
+            <tbody id="body">
+
             </tbody>
         </table>
+        <p id="nodata">Sin datos</p>
     </div>
 
     <div id="message" class="message" style="display: none;">

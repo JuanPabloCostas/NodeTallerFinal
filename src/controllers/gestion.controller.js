@@ -19,15 +19,34 @@ const registrarEmpleado = async(req, res) => {
     });
 }
 
-const getEmpleado = async(req, res) => {
+const getEmpleados = async(req, res) => {
     const { nombre } = req.body;
-    const query = 'SELECT * FROM empleados WHERE LOWER(nombre) = LOWER(?)';
-    connection.query(query, [nombre], (err, rows) => {
+    const query = 'SELECT * FROM empleados WHERE LOWER(nombre) LIKE ?';
+    connection.query(query, [`%${nombre.toLowerCase()}%`], (err, rows) => {
         if (err) {
             res.status(400).json(err);
         } else {
             res.status(200).json(rows);
         }
+    });
+}
+
+const getEmpleadoId = async(req, res) => {
+    const { id_empleado } = req.params;
+    const query = 'SELECT * FROM empleados WHERE id_empleado = ?';
+    connection.query(query, [id_empleado], (err, rows) => {
+        if (err) {
+            return res.status(400).json(err);
+        }
+
+        if (rows.length === 0) {
+            return res.status(501).json({
+                message: 'Empleado no encontrado',
+            });
+        }
+        
+        
+        res.status(200).json(rows[0]);
     });
 }
 
@@ -69,7 +88,8 @@ const eliminarEmpleado = async(req, res) => {
 
 module.exports = {
     registrarEmpleado,
-    getEmpleado,
+    getEmpleados,
     modificarEmpleado,
-    eliminarEmpleado
+    eliminarEmpleado,
+    getEmpleadoId,
 }

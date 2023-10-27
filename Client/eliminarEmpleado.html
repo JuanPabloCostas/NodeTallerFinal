@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Empleado</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Welcome, <span id="usuario"></span>!</h1>
+        <h2>Eliminar Empleado</h2>
+        <div>
+        <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
+        <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
+        <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
+        <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
+        <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
+    </div>
+        <button id="logoutButton">Logout</button>
+    </div>
+
+    <form method="post" id="eliminarEmpleadoForm">
+        <label for="id_empleado">ID</label>
+        <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID" required>
+
+        <button id="submitButton" type="submit">Eliminar Empleado</button>
+    </form>
+
+    <div id="message" class="message" style="display: none;">
+        <!-- Message from API! -->
+    </div>
+
+    <script src="scrips/validate.js"></script>
+    <script type="module" src="scrips/eliminarEmpleado.js"></script>
+</body>
+</html>

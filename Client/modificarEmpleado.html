@@ -6,6 +6,64 @@
     <title>Modificar Empleado</title>
 </head>
 <body>
+
+    <div>
+        <h1>Welcome, <span id="usuario"></span>!</h1>
+        <h2>Modificar Empleado</h2>
+        <div>
+            <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
+            <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
+            <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
+            <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
+            <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
+        </div>
+        <button id="logoutButton">Logout</button>
+    </div>
+
+    <div>
+        <form method="post" id="formFetch">
+            <label for="id_empleado">ID</label>
+            <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID" required>
+
+            <button id="submitButtonSearch" type="submit">Buscar Empleado</button>
+            <button onclick="refreshPage()">Reiniciar</button>
+        </form>
+
+        <form method="post" id="actualizarEmpleadoForm">
+
+            <label for="nombre">Nombre(s)</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" required disabled>
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa los apellidos" required disabled>
+
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" name="telefono" placeholder="Ingresa el teléfono" required disabled>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="text" id="correoElectronico" name="correoElectronico" placeholder="Ingresa el correo electrónico" required disabled>
+
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ingresa la dirección" required disabled>
+
+            <button id="submitButton" type="submit" disabled>Modificar</button>
+
+        </form>
+
+        <div id="message" class="message" style="display: none;">
+            <!-- Message from API! -->
+        </div>
+    </div>
+
+
     
+
+<script src="scrips/validate.js"></script>
+<script type="module" src="scrips/modificarEmpleado.js"></script>
+<script>
+    function refreshPage() {
+        location.reload();
+    }
+</script>
 </body>
 </html>

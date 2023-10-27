@@ -1,22 +1,22 @@
-// registrarEmpleado.js
+// registrarUsuario.js
 
 import { showMessage } from './showMessage.js';
 
-const form = document.getElementById('registrarEmpleadoForm');
+const form = document.getElementById('registrarUsuarioForm');
 form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(this);
     const data = {
-        nombre: formData.get('nombre'),
-        apellidos: formData.get('apellidos'),
-        telefono: formData.get('telefono'),
-        correoElectronico: formData.get('correo'),
-        direccion: formData.get('direccion'),
+        usuario: formData.get('usuario'),
+        contrasena: formData.get('contrasena'),
+        descripcion: formData.get('descripcion'),
+        pkmFavorito: formData.get('pkmFavorito'),
+        id_empleado: formData.get('id_empleado'),
     };
 
-    fetch('https://becastest1.ue.r.appspot.com/api/gestion/registrarEmpleado', {
+    fetch('https://becastest1.ue.r.appspot.com/api/auth/registrarUsuario', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -26,13 +26,13 @@ function handleSubmit(event) {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Error al registrar el empleado');
+            throw new Error('Error al registrar el usuario');
         }
         return response.json();
     })
     .then(result => {
         console.log('Success:', result);
-        showMessage('Empleado registrado exitosamente');
+        showMessage('Usuario registrado exitosamente');
         form.reset();
     })
     .catch(error => {

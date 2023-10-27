@@ -28,7 +28,7 @@
             contrasena: password
         };
 
-        fetch('http://localhost:3003/api/auth/login', {
+        fetch('https://becastest1.ue.r.appspot.com/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@
             localStorage.setItem('token', data.token);
 
             // Handle success response
-            window.location.href = 'welcome.html';
+            window.location.href = 'index.html';
         })
         .catch((error) => {
             console.error('Error:', error);
