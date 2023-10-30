@@ -3,28 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Eliminar Empleado</title>
 </head>
-<body>
+<body class="section-body">
     
-    <div>
+    <div class="section-header">
         <h1>Welcome, <span id="usuario"></span>!</h1>
         <h2>Eliminar Empleado</h2>
-        <div>
-        <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
-        <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
-        <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
-        <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
-        <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
-    </div>
-        <button id="logoutButton">Logout</button>
     </div>
 
-    <form method="post" id="eliminarEmpleadoForm">
-        <label for="id_empleado">ID</label>
-        <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID" required>
+<div>
+    <div class="page-options-horizontal">
+        <button class="section-option-btn" onclick="window.location.href = 'registrarEmpleado.html'">
+            <img src="./assets/Registrar empleado.svg" alt="">
+            Registrar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'buscarEmpleado.html'">
+            <img src="./assets/Buscar Empleado.svg" alt="">
+            Buscar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'modificarEmpleado.html'">
+            <img src="./assets/Modificar empleado.svg" alt="">
+            Modificar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'eliminarEmpleado.html'">
+            <img src="./assets/Eliminar empleado.svg" alt="">
+            Eliminar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'registrarUsuario.html'">
+            <img src="./assets/Agregar usuario.svg" alt="">
+            Registrar Usuario
+        </button>
+        <button id="logoutButton" class="section-logout-btn">
+            <img src="./assets/Salir.svg" alt="">
+            Logout
+        </button>
+    </div>
+</div>
 
-        <button id="submitButton" type="submit">Eliminar Empleado</button>
+    <form method="post" id="eliminarEmpleadoForm" class="section-form">
+        <div class="form-field">
+            <label for="id_empleado" class="section-label">ID</label>
+            <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID" class="section-input" required>
+        </div>
+
+        <button id="submitButton" type="submit" class="section-form-btn">Eliminar Empleado</button>
     </form>
 
     <div id="message" class="message" style="display: none;">
