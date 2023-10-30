@@ -3,40 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Registrar usuario</title>
 </head>
-<body>
-    
-    <div>
+<body class="section-body">
+    <div class="section-header">
         <h1>Welcome, <span id="usuario"></span>!</h1>
         <h2>Registrar usuario</h2>
-        <div>
-            <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
-            <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
-            <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
-            <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
-            <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
+    </div>
+    
+    <div>
+        <div class="page-options-horizontal">
+            <button class="section-option-btn" onclick="window.location.href = 'registrarEmpleado.html'">
+                <img src="./assets/Registrar empleado.svg" alt="">
+                Registrar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'buscarEmpleado.html'">
+                <img src="./assets/Buscar Empleado.svg" alt="">
+                Buscar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'modificarEmpleado.html'">
+                <img src="./assets/Modificar empleado.svg" alt="">
+                Modificar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'eliminarEmpleado.html'">
+                <img src="./assets/Eliminar empleado.svg" alt="">
+                Eliminar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'registrarUsuario.html'">
+                <img src="./assets/Agregar usuario.svg" alt="">
+                Registrar Usuario
+            </button>
+            <button id="logoutButton" class="section-logout-btn">
+                <img src="./assets/Salir.svg" alt="">
+                Logout
+            </button>
         </div>
-        <button id="logoutButton">Logout</button>
     </div>
 
-    <form method="post" id="registrarUsuarioForm">
-        <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" name="usuario" placeholder="Ingresa el usuario" required>
+    <form method="post" id="registrarUsuarioForm" class="section-form">
+        <div class="form-field">
+            <label for="usuario" class="section-label">Usuario</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Ingresa el usuario" class="section-input" required>
+        </div>
+        <div class="form-field">
+            <label for="contrasena" class="section-label">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa la contraseña" class="section-input" required>    
+        </div>
+        <div class="form-field">
+            <label for="descripcion" class="section-label">Descripcion</label>
+            <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la descripcion" class="section-input" required>    
+        </div>
+        <div class="form-field">
+            <label for="pkmFavorito" class="section-label">Pokemon Favorito</label>
+            <input type="text" id="pkmFavorito" name="pkmFavorito" placeholder="Ingresa el pokemon favorito" class="section-input" required>    
+        </div>
+        <div class="form-field">
+            <label for="id_empleado" class="section-label">ID de empleado</label>
+            <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID de empleado" class="section-input" required>    
+        </div>
 
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa la contraseña" required>
-
-        <label for="descripcion">Descripcion</label>
-        <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la descripcion" required>
-
-        <label for="pkmFavorito">Pokemon Favorito</label>
-        <input type="text" id="pkmFavorito" name="pkmFavorito" placeholder="Ingresa el pokemon favorito" required>
-
-        <label for="id_empleado">ID de empleado</label>
-        <input type="text" id="id_empleado" name="id_empleado" placeholder="Ingresa el ID de empleado" required>
-
-        <button id="submitButton" type="submit">Registrar usuario</button>
+        <button id="submitButton" type="submit" class="section-form-btn">Registrar usuario</button>
     </form>
 
     <div id="message" class="message" style="display: none;">

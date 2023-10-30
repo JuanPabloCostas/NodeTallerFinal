@@ -3,44 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Registrar Empleado</title>
 </head>
-<body>
+<body class="section-body">
 
 <!-- header -->
-<div>
+<div class="section-header">
     <h1>Welcome, <span id="usuario"></span>!</h1>
     <h2>Registrar Empleado</h2>
-    <div>
-        <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
-        <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
-        <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
-        <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
-        <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
+</div>
+<div>
+    <div class="page-options-horizontal">
+        <button class="section-option-btn" onclick="window.location.href = 'registrarEmpleado.html'">
+            <img src="./assets/Registrar empleado.svg" alt="">
+            Registrar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'buscarEmpleado.html'">
+            <img src="./assets/Buscar Empleado.svg" alt="">
+            Buscar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'modificarEmpleado.html'">
+            <img src="./assets/Modificar empleado.svg" alt="">
+            Modificar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'eliminarEmpleado.html'">
+            <img src="./assets/Eliminar empleado.svg" alt="">
+            Eliminar Empleado
+        </button>
+        <button class="section-option-btn" onclick="window.location.href = 'registrarUsuario.html'">
+            <img src="./assets/Agregar usuario.svg" alt="">
+            Registrar Usuario
+        </button>
+        <button id="logoutButton" class="section-logout-btn">
+            <img src="./assets/Salir.svg" alt="">
+            Logout
+        </button>
     </div>
-    <button id="logoutButton">Logout</button>
 </div>
 
 <!-- body -->
 <div>
-    <form id="registrarEmpleadoForm">
-        <label for="nombre">Nombre(s)</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" required>
-
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa los apellidos" required>
-
-        <label for="telefono">Teléfono</label>
-        <input type="text" id="telefono" name="telefono" placeholder="Ingresa el teléfono" required>
-
-        <label for="correo">Correo electrónico</label>
-        <input type="text" id="correo" name="correo" placeholder="Ingresa el correo electrónico" required>
-
-        <label for="direccion">Dirección</label>
-        <input type="text" id="direccion" name="direccion" placeholder="Ingresa la dirección" required>
-
+    <form id="registrarEmpleadoForm" class="section-form">
+        <div class="form-field">
+            <label for="nombre" class="section-label">Nombre(s)</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" class="section-input" required>
+        </div>
+        <div class="form-field">
+            <label for="apellidos" class="section-label">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Ingresa los apellidos" class="section-input" required>
+        </div>
+        <div class="form-field">
+            <label for="telefono" class="section-label">Teléfono</label>
+            <input type="text" id="telefono" name="telefono" placeholder="Ingresa el teléfono" class="section-input" required>
+        </div>
+        <div class="form-field">
+            <label for="correo" class="section-label">Correo electrónico</label>
+            <input type="text" id="correo" name="correo" placeholder="Ingresa el correo electrónico" class="section-input" required>
+        </div>
+        <div class="form-field">
+            <label for="direccion" class="section-label">Dirección</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ingresa la dirección" class="section-input" required>
+        </div>
         <!-- <button type="button" onclick="registrarEmpleado()">Registrar Empleado</button> -->
-        <button type="submit">Registrar Empleado</button>
+        <button type="submit" class="section-form-btn">Registrar Empleado</button>
     </form>
 </div>
 

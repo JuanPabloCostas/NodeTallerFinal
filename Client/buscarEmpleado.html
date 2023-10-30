@@ -3,38 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Buscar Empleado</title>
 </head>
-<body>
-    <div>
+<body class="section-body">
+    <!-- header -->
+    <div class="section-header">
         <h1>Welcome, <span id="usuario"></span>!</h1>
         <h2>Buscar Empleado</h2>
-        <div>
-        <button onclick="window.location.href = 'registrarEmpleado.html'">Registrar Empleado</button>
-        <button onclick="window.location.href = 'buscarEmpleado.html'">Buscar Empleado</button>
-        <button onclick="window.location.href = 'modificarEmpleado.html'">Modificar Empleado</button>
-        <button onclick="window.location.href = 'eliminarEmpleado.html'">Eliminar Empleado</button>
-        <button onclick="window.location.href = 'registrarUsuario.html'">Registrar Usuario</button>
     </div>
-        <button id="logoutButton">Logout</button>
+    <div>
+        <div class="page-options-horizontal">
+            <button class="section-option-btn" onclick="window.location.href = 'registrarEmpleado.html'">
+                <img src="./assets/Registrar empleado.svg" alt="">
+                Registrar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'buscarEmpleado.html'">
+                <img src="./assets/Buscar Empleado.svg" alt="">
+                Buscar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'modificarEmpleado.html'">
+                <img src="./assets/Modificar empleado.svg" alt="">
+                Modificar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'eliminarEmpleado.html'">
+                <img src="./assets/Eliminar empleado.svg" alt="">
+                Eliminar Empleado
+            </button>
+            <button class="section-option-btn" onclick="window.location.href = 'registrarUsuario.html'">
+                <img src="./assets/Agregar usuario.svg" alt="">
+                Registrar Usuario
+            </button>
+            <button id="logoutButton" class="section-logout-btn">
+                <img src="./assets/Salir.svg" alt="">
+                Logout
+            </button>
+        </div>
     </div>
 
 
     <div>
-        <form id="buscarEmpleadoForm">
-            <label for="nombre">Nombre(s)</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" required>
+        <form id="buscarEmpleadoForm" class="section-form">
+            <div class="form-field">
+                <label for="nombre" class="section-label">Nombre(s)</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre(s)" class="section-input" required>
+            </div>
 
-            <button id="submitButton" type="submit">Buscar Empleado</button>
+            <button id="submitButton" type="submit" class="section-form-btn">Buscar Empleado</button>
         </form>
     </div>
 
-    <br>
+    <!-- <br> -->
 
-    <div>
+    <div class="table-container">
         <table id="tablaEmpleados">
             <thead>
-                <tr>
+                <tr class="header-row">
                     <th>ID</th>
                     <th>Nombre(s)</th>
                     <th>Apellidos</th>

@@ -1,8 +1,28 @@
 /* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.section-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background-color: #E5E5E5;
+}
+
+h1{
+    text-align: center;
+    padding: 24px;
+    background-color: #2A2A2A;
+    color: white;
+    width: 80%;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
 .container {
@@ -16,28 +36,260 @@ button {
     cursor: pointer;
 }
 
-/* Estilos específicos para la página de bienvenida */
-.container-welcome {
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table button {
+    padding: 6px;
+    background-color: #2A2A2A;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+thead{
+    background-color: #D93D66;
+}
+
+th{
+    color: white;
+}
+
+th, td{
+    padding: 8px;
     text-align: center;
 }
 
+h2{
+    color: white;
+    background-color: #732666;
+    padding: 16px;
+    width: 60%;
+    text-align: center;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.section-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-options-horizontal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.section-option-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 16px;
+    background-color: #0099FF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    transition: all 300ms;
+    width: 150px;
+}
+
+.section-option-btn:hover{
+    background-color: #2faafc;
+}
+
+.section-logout-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #D93D66;
+    color: white;
+    transition: all 300ms;
+    width: 150px;
+}
+
+.section-logout-Button:hover{
+    background-color: #db4f74;
+}
+
+.section-form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-input{
+    padding: 8px;
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+.section-form-btn{
+    background-color: #2A2A2A;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+}
+
+.table-container{
+    width: 80%;
+}
+
+/* Estilos específicos para la página de bienvenida */
+#welcomeBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background-color: #E5E5E5;
+}
+
+.fondo{
+    width: 40vw;
+}
+
+.card{
+    background: url('./assets/FondoWelcome.svg') no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+}
+
+.page-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    border: none;
+    width: 300px;
+    height: 300px;
+    justify-content: space-between;
+}
+
+.page-options img{
+    width: 24px;
+}
+
+.home-option-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 16px;
+    background-color: #0099FF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    transition: all 300ms;
+    width: 100%;
+}
+
+.home-option-btn:hover{
+    background-color: #2faafc;
+}
+
+
+#welcomeBody .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.home-logout-Button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #D93D66;
+    color: white;
+    transition: all 300ms;
+}
+
+.home-logout-Button:hover{
+    background-color: #db4f74;
+}
+
 /* Estilos específicos para el formulario de inicio de sesión */
-form {
+
+#loginBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginBody img{
+    height: 100vh;
+}
+
+#loginForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 300px;
     margin: auto;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.3);
 }
 
-label {
+#loginForm label {
     display: block;
     margin-bottom: 8px;
 }
 
-input {
+#loginForm input {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+#loginForm button{
+    background-color: black;
+    color: white;
+    padding: 8px;
+    width: 300px;
+    height: 36px;
+    border-style: none;
+    border-radius: 4px;
+    transition: all 300ms;
+}
+
+#loginForm button:hover{
+    background-color: #D93D66;
+    color: white;
 }
